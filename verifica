@@ -1,0 +1,11 @@
+// la sintesi sottrattiva é un modello di sintesi sonora all'interno della quale una sorgente sonora con differenti armoniche viene filtrata da uno spettro ha il compito di sottrarre le frequenze//
+//i numeri che identificano lo slider sono, il valore iniziale, il valore minimo, il valore massimo e lo stap incrementale (il livello di precisione)//
+//il valore iniziale puo essere solo tra il valore minimo e il valore massimo//
+//lo slider su faust puo essere sia verticale che orizzontale, la scelta è grafica//
+//Spettroscopio che ci mostra il contenuto del suono nel dominio della frequenza, sull'asse delle x le frequenze le frequenze, sull'asse delle y l'ampiezza//
+//l'oscilloscopio ci mostra il contenuto del suono nel dominio del tempo sull'asse delle x abbiamo il tempo e sull'asse delle y le ampiezze//
+// lowpass= (passa basso) è uno dei filtri più facili da fare su faust//
+// dato un punto di taglio, il filtro di primo ordine ( il filtro più elementare che possiamo fare) attenua 6dB per ottava//
+
+import("stdfaust.lib");
+process = no.noise : fi.lowpass(4,6000) : fi.highpass(4,6000);
